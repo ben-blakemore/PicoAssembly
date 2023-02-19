@@ -1,0 +1,2 @@
+/pico_workspace/build/*
+!/pico_workspace/build/*.uf2

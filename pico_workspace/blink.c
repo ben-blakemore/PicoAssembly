@@ -16,10 +16,10 @@ int main() {
 
     while(1) {
         scanf("%1024s", buffer);
-        printf("%s\n", buffer);
-        gpio_put(led_pin, false);
-        sleep_ms(500);
-        gpio_put(led_pin, true);
-        sleep_ms(500);
+        if (strcmp(buffer, "ON") == 0) {
+            gpio_put(led_pin, true);
+        } else if (strcmp(buffer, "OFF") == 0) {
+            gpio_put(led_pin, false);
+        }
     }
 }

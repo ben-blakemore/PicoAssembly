@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include "pico/bootrom.h"
 
 int main() {
 
@@ -20,6 +21,8 @@ int main() {
             gpio_put(led_pin, true);
         } else if (strcmp(buffer, "OFF") == 0) {
             gpio_put(led_pin, false);
+        } else if (strcmp(buffer, "REBOOT") == 0) {
+            reset_usb_boot(0,0);
         }
     }
 }
